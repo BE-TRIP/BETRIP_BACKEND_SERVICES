@@ -6,7 +6,7 @@ pipeline {
     }
 	
     stages {
-        stage ('Compile Stage 2022-01') {
+        stage ('Compile Stage 2022-01 by Diego Alonso') {
 
             steps {
                 withMaven(maven : 'MAVEN_3_6_3') {
@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage 2022-01') {
+        stage ('Testing Stage 2022-01 by Diego Alonso') {
 
             steps {
                 withMaven(maven : 'MAVEN_3_6_3') {
@@ -32,7 +32,7 @@ pipeline {
 			}
 		}*/
 
-        stage ('package Stage') {
+        stage ('package Stage by Diego Alonso') {
             steps {
                 withMaven(maven : 'MAVEN_3_6_3') {
                     bat 'mvn package'
