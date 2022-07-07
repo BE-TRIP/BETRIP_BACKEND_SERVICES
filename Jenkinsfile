@@ -1,15 +1,15 @@
 pipeline {
     agent any
     tools { 
-        maven 'MAVEN_3_6_3' 
-        jdk 'JDK_1_11' 
+        maven 'MAVEN_current' 
+        jdk 'JDK_current' 
     }
 	
     stages {
         stage ('Compile Stage 2022-01 by Diego Alonso') {
 
             steps {
-                withMaven(maven : 'MAVEN_3_6_3') {
+                withMaven(maven : 'MAVEN_current') {
                     bat 'mvn clean compile'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
         stage ('Testing Stage 2022-01 by Diego Alonso') {
 
             steps {
-                withMaven(maven : 'MAVEN_3_6_3') {
+                withMaven(maven : 'MAVEN_current') {
                     bat 'mvn test'
                 }
             }
@@ -34,7 +34,7 @@ pipeline {
 
         stage ('package Stage by Diego Alonso') {
             steps {
-                withMaven(maven : 'MAVEN_3_6_3') {
+                withMaven(maven : 'MAVEN_current') {
                     bat 'mvn package'
                 }
             }
